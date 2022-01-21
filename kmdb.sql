@@ -68,19 +68,15 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS people;
 DROP TABLE IF EXISTS roles;
-DROP TABLE IF EXISTS cast;
-
-
-
 
 -- Create new tables, according to your domain model
 -- TODO!
 CREATE TABLE people (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   first_name TEXT,
-  last_name TEXT,
+  last_name TEXT
 );
 
 CREATE TABLE movies (
@@ -88,7 +84,7 @@ CREATE TABLE movies (
   title TEXT,
   release_year INTEGER,
   mpaa_rating TEXT,
-  director_id TEXT
+  director_id INTEGER
 );
 
 
@@ -102,15 +98,335 @@ CREATE TABLE roles (
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO!
 
+-- Batman Begins          Christian Bale        Bruce Wayne
+-- Batman Begins          Michael Caine         Alfred
+-- Batman Begins          Liam Neeson           Ra's Al Ghul
+-- Batman Begins          Katie Holmes          Rachel Dawes
+-- Batman Begins          Gary Oldman           Commissioner Gordon
+-- The Dark Knight        Christian Bale        Bruce Wayne
+-- The Dark Knight        Heath Ledger          Joker
+-- The Dark Knight        Aaron Eckhart         Harvey Dent
+-- The Dark Knight        Michael Caine         Alfred
+-- The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
+-- The Dark Knight Rises  Christian Bale        Bruce Wayne
+-- The Dark Knight Rises  Gary Oldman           Commissioner Gordon
+-- The Dark Knight Rises  Tom Hardy             Bane
+-- The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
+-- The Dark Knight Rises  Anne Hathaway         Selina Kyle
+
+
+
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Christopher",
+    "Nolan"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Christian",
+    "Bale"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Michael",
+    "Caine"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Liam",
+    "Neeson"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Katie",
+    "Holmes"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Gary",
+    "Oldman"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Heath",
+    "Ledger"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Aaron",
+    "Eckhart"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Maggie",
+    "Gyllenhall"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Tom",
+    "Hardy"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Joseph",
+    "Gordon-Levitt"
+);
+INSERT INTO people (
+  first_name,
+  last_name
+)
+VALUES (
+    "Anne",
+    "Hathaway"
+);
+
+
+INSERT INTO movies (
+  title,
+  release_year,
+  mpaa_rating,
+  director_id
+)
+VALUES (
+    "Batman Begins", 
+    2005,
+    "PG-13",
+    1
+);
+
+INSERT INTO movies (
+  title,
+  release_year,
+  mpaa_rating,
+  director_id
+)
+VALUES (
+    "The Dark Knight", 
+    2008,
+    "PG-13",
+    1
+);
+
+INSERT INTO movies (
+  title,
+  release_year,
+  mpaa_rating,
+  director_id
+)
+VALUES (
+    "The Dark Knight Rises", 
+    2012,
+    "PG-13",
+    1
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    1, 
+    2,
+    "Bruce Wayne"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    1, 
+    3,
+    "Alfred"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    1, 
+    4,
+    "Ra's Al Ghul"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    1, 
+    5,
+    "Rachel Dawes"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    1, 
+    6,
+    "Commissioner Gordon"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    2, 
+    2,
+    "Bruce Wayne"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    2, 
+    7,
+    "Joker"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    2, 
+    8,
+    "Harvey Dent"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    2, 
+    3,
+    "Alfred"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    2, 
+    9,
+    "Rachel Dawes"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    3, 
+    2,
+    "Bruce Wayne"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    3, 
+    5,
+    "Commissioner Gordon"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    3, 
+    10,
+    "Bane"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    3, 
+    11,
+    "John Blake"
+);
+
+INSERT INTO roles (
+  movie_id ,
+  person_id ,
+  movie_character 
+)
+VALUES (
+    3, 
+    12,
+    "Selina Kyle"
+);
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+SELECT movies.title, movies.release_year, movies.mpaa_rating, people.first_name, people.last_name
+FROM movies
+INNER JOIN people on movies.director_id=people.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -120,4 +436,7 @@ CREATE TABLE roles (
 
 
 -- The SQL statement for the cast output
--- TODO!
+SELECT movies.title, people.first_name, people.last_name , roles.movie_character
+FROM roles
+INNER JOIN people on roles.person_id=people.id
+INNER JOIN movies on roles.movie_id=movies.id;
